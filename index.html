@@ -11,15 +11,19 @@
     <div class="container">
         <h1 class="heading">cash register manager</h1>
         <p class="dis">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
-        <label for="billAmt">Bill amount:</label>
-        <input type="text" id="billAmt">
 
-        <!-- <button class="next">Next</button> -->
+        <div class="billEnter">
+            <label for="billAmt">Bill amount:</label>
+            <input type="text" id="billAmt">
+            <button class="next">Next</button>
+        </div>
 
-        <label for="amtGiven">Cash Given:</label>
-        <input type="text" id="amtGiven">
+        <div class="cashEnter">
+            <label for="amtGiven">Cash Given:</label>
+            <input type="text" id="amtGiven">
+            <button id="check">check</button>
+        </div>
 
-        <button id="check">check</button>
 
         <p id="message"></p>
 
