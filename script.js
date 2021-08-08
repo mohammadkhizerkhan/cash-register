@@ -1,6 +1,6 @@
 // const billDiv = document.querySelector(".billEnter");
 const billAmt = document.querySelector("#billAmt");
-const nextBtn = document.querySelector(".next");
+const nextBtn = document.querySelector("#next");
 
 const cashDiv = document.querySelector(".cashEnter");
 const cashGiven = document.querySelector("#amtGiven");

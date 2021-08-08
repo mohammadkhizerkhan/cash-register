@@ -9,23 +9,27 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="heading">cash register manager</h1>
+        <h2 class="heading">cash register manager</h2>
         <p class="dis">Enter the bill amount and cash given by the customer and know minimum number of notes to return.</p>
 
         <div class="billEnter">
-            <label for="billAmt">Bill amount:</label>
+            <div>
+                <label for="billAmt">Bill amount:</label>
+            </div>
             <input type="number" id="billAmt">
-            <button class="next">Next</button>
+            <button id="next" class="button">Next</button>
         </div>
 
         <div class="cashEnter">
-            <label for="amtGiven">Cash Given:</label>
+            <div>
+                <label for="amtGiven">Cash Given:</label>
+            </div>
             <input type="number" id="amtGiven">
-            <button id="check">check</button>
+            <button id="check" class="button">check</button>
         </div>
 
+        <p id="message"></p>
         <div class="outputEnter">
-            <p id="message"></p>
     
             <table class="tableChange">
                 <caption>Return Change:</caption>
