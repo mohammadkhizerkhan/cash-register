@@ -17,23 +17,24 @@ const notes=[2000, 500, 100, 20, 10, 5, 1];
 
 chk.addEventListener("click", function validatingCashAndBillamt() {
     hidemessage();
-    if(billAmt>0 && cashGiven.value>=billAmt.value){
-        const amountReturn=cashGiven.value-billAmt.value;
-        calculateChange(amountReturn);
+    if (Number(cashGiven.value) < Number(billAmt.value)) {
+      showMessage("The cash amount should be atleast equal to bill amount");
     }
     else{
-        showMessage("The cash amount should be atleast equal to bill amount");
+        const amountReturn = Number(cashGiven.value) - Number(billAmt.value);
+        calculateChange(amountReturn);
     }
-});
+  });
 
 //calculating the changes
 
-function calculateChange(amtReturn){
+function calculateChange(amountReturn){
     for(let i=0;i<notes.length;i++){
-        const no_of_notes=Math.trunc(amtReturn/notes[i]);
-        amtReturn%=notes[i];
+        const no_of_notes=Math.trunc(amountReturn/notes[i]);
+        amountReturn%=notes[i];
         outputDis[i].innerText=no_of_notes;
     }
+    console.log(no_of_notes)
 }
 
 
