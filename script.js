@@ -15,14 +15,21 @@ const notes = [2000, 500, 100, 20, 10, 5, 1];
 chk.addEventListener("click", function validatingCashAndBillamt() {
   hidemessage();
   outputDiv.style.display = "block";
-  if (Number(cashGiven.value) < Number(billAmt.value)) {
-    showMessage("The cash amount should be atleast equal to bill amount");
+  if(Number(billAmt.value)>0 && Number(cashGiven.value)>0){
+    
+    if (Number(cashGiven.value) < Number(billAmt.value)) {
+      showMessage("The cash amount should be atleast equal to bill amount");
+      return;
+    }
+    const amountReturn = Number(cashGiven.value) - Number(billAmt.value);
+    calculateChange(amountReturn);
   }
+
   else{
-      const amountReturn = Number(cashGiven.value) - Number(billAmt.value);
-      calculateChange(amountReturn);
+    showMessage("Please enter the valid amount");
   }
   
+
 });
 
 //calculating the changes
@@ -43,6 +50,7 @@ function hidemessage() {
 
 // error message display function
 function showMessage(msg) {
+  outputDiv.style.display="none"
   message.style.display = "block";
   message.innerText = msg;
 }
